@@ -4,10 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:hackathon/screens/auth/sign_in_with_google.dart';
+import 'package:hackathon/screens/auth/sign_up.dart';
 
 import '../../services/validator.dart';
+import '../homepage.dart';
 import '../notification.dart';
 import 'auth_button.dart';
 
@@ -17,7 +17,6 @@ class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
 
-  static const routeName = '/login';
 }
 
 class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
@@ -143,7 +142,6 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
     });
   }
 
-  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   Color bottomColor = Colors.black;
   Color topColor = Colors.blue;
@@ -259,10 +257,10 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                           child: Align(
                               alignment: Alignment.center,
                               child: AutoSizeText(
-                                "Welcome Back",
+                                "Welcome\nBack",
                                 textAlign: TextAlign.center,
                                 style: Theme.of(context).textTheme.headline1,
-                                maxLines: 1,
+                                maxLines: 2,
                               )),
                         ),
                       ),
@@ -281,7 +279,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                 SlideTransition(
                                   position: _usernameOffsetController,
                                   child: SizedBox(
-                                      width: MediaQuery.of(context).size.width / 5,
+                                      width: MediaQuery.of(context).size.width / 2,
                                       child: AnimatedSwitcher(
                                           transitionBuilder: (Widget child, Animation<double> animation) {
                                             return SizeTransition(sizeFactor: animation, axis: Axis.horizontal, child: child);
@@ -295,7 +293,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                 SlideTransition(
                                   position: _passwordOffsetController,
                                   child: SizedBox(
-                                      width: MediaQuery.of(context).size.width / 5,
+                                      width: MediaQuery.of(context).size.width / 2,
                                       child: AnimatedSwitcher(
                                           transitionBuilder: (Widget child, Animation<double> animation) {
                                             return SizeTransition(
@@ -316,7 +314,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       SizedBox(
-                                        width: MediaQuery.of(context).size.width / 5,
+                                        width: MediaQuery.of(context).size.width / 2,
                                         child: TextButton(
                                           style: ButtonStyle(
                                               backgroundColor: MaterialStateProperty.all(loginBackgroundColor),
@@ -335,7 +333,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                                 });
                                                 _titleSlideDownAnimationController.forward();
                                                 Future.delayed(const Duration(seconds: 2)).then((value) {
-                                                  Navigator.of(context).pop();
+                                                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
                                                 });
                                               }).catchError((error) {
                                                 ScaffoldMessenger.of(context).showSnackBar(notification("Authentication Failed", context));
@@ -359,30 +357,16 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                           ),
                                         ),
                                       ),
-                                      IconButton(
-                                        icon: const Icon(FontAwesomeIcons.google),
-                                        onPressed: () {
-                                          signInWithGoogle().then((value) {
-                                            if (mounted) {
-                                              setState(() {
-                                                visible = !visible;
-                                              });
-                                            }
-                                            _titleSlideDownAnimationController.forward();
-                                            Future.delayed(const Duration(seconds: 2)).then((value) {
-                                              Navigator.of(context).pop();
-                                            });
-                                          });
-                                        },
-                                      ),
+                                      
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
+                                          const SizedBox(height: 15),
                                           const Text("Don't have an account? ", style: TextStyle(color: Colors.white)),
                                           InkWell(
                                               onTap: () {
-                                                Navigator.of(context).pushNamed(LoginPage.routeName);
+                                                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignUpPage()));
                                               },
                                               child: const Text(
                                                 "Sign up",

@@ -12,6 +12,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return SignUpPage();
+    return Scaffold(
+        body: Column(
+      children: [],
+    ));
   }
 }

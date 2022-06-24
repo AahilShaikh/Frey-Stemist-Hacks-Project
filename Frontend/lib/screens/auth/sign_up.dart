@@ -2,15 +2,12 @@ import 'package:animated_background/animated_background.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
-import 'package:hackathon/screens/auth/sign_in_with_google.dart';
+import 'package:hackathon/screens/homepage.dart';
 
 import '../../services/validator.dart';
 import '../notification.dart';
 import 'auth_button.dart';
-import 'guided_account_setup.dart';
 import 'login.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -19,7 +16,6 @@ class SignUpPage extends StatefulWidget {
   @override
   State<SignUpPage> createState() => _SignUpPageState();
   
-  static const routeName = '/signup';
 }
 
 class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
@@ -299,7 +295,7 @@ class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
                                 SlideTransition(
                                   position: _passwordOffsetController,
                                   child: SizedBox(
-                                      width: MediaQuery.of(context).size.width / 5,
+                                      width: MediaQuery.of(context).size.width / 2,
                                       child: AnimatedSwitcher(
                                           transitionBuilder: (Widget child, Animation<double> animation) {
                                             return SizeTransition(
@@ -321,7 +317,7 @@ class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
                                     children: [
                                       
                                       SizedBox(
-                                        width: MediaQuery.of(context).size.width / 5,
+                                        width: MediaQuery.of(context).size.width / 2,
                                         child: TextButton(
                                           style: ButtonStyle(
                                               backgroundColor: MaterialStateProperty.all(signUpBackgroundColor),
@@ -341,7 +337,7 @@ class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
                                                   Navigator.of(context)
                                                       .pushReplacement(
                                                     PageRouteBuilder(
-                                                      pageBuilder: (context, a1, a2) => const GuidedAccountSetup(),
+                                                      pageBuilder: (context, a1, a2) => const HomePage(),
                                                       transitionsBuilder: (context, anim, a2, child) => FadeTransition(opacity: anim, child: child),
                                                       transitionDuration: const Duration(milliseconds: 2000),
                                                     ),

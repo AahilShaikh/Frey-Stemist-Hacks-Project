@@ -18,7 +18,7 @@ String? validatePassword(String value) {
     return 'Please enter password';
   } else {
     if (!regex.hasMatch(value)) {
-      return 'Password should contain at least one number,\none special character, and be at least 6 characters\nlong';
+      return 'Password should contain at\nleast one number, one special\ncharacter, and be at least 6 \ncharacters long';
     } else {
       return null;
     }
