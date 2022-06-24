@@ -13,3 +13,4 @@ SnackBar notification(String message, BuildContext context) {
     duration: const Duration(milliseconds: 1500),
   );
 }
+   

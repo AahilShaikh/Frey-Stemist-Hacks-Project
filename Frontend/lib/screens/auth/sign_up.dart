@@ -34,6 +34,7 @@ class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+
   Color signUpBackgroundColor = Colors.transparent;
   Color signUpTextColor = Colors.white;
 

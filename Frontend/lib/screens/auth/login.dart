@@ -290,6 +290,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                 const SizedBox(
                                   height: 15,
                                 ),
+                                     
                                 SlideTransition(
                                   position: _passwordOffsetController,
                                   child: SizedBox(
