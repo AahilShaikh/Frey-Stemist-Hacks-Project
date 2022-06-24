@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "Welcome Back",
                 style: Theme.of(context).textTheme.headline1,
+                textAlign: TextAlign.center,
               ),
             ),
             Spacer(),
