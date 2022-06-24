@@ -13,16 +13,16 @@ import 'auth_button.dart';
 import 'guided_account_setup.dart';
 import 'login.dart';
 
-class SignUpPage extends ConsumerStatefulWidget {
+class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<SignUpPage> createState() => _SignUpPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
   
   static const routeName = '/signup';
 }
 
-class _SignUpPageState extends ConsumerState<SignUpPage> with TickerProviderStateMixin {
+class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
   late Widget username;
   late Widget password;
 
@@ -285,7 +285,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> with TickerProviderStat
                                 SlideTransition(
                                   position: _usernameOffsetController,
                                   child: SizedBox(
-                                      width: MediaQuery.of(context).size.width / 5,
+                                      width: MediaQuery.of(context).size.width / 2,
                                       child: AnimatedSwitcher(
                                           transitionBuilder: (Widget child, Animation<double> animation) {
                                             return SizeTransition(sizeFactor: animation, axis: Axis.horizontal, child: child);
@@ -370,20 +370,6 @@ class _SignUpPageState extends ConsumerState<SignUpPage> with TickerProviderStat
                                             style: TextStyle(color: signUpTextColor),
                                           ),
                                         ),
-                                      ),
-                                      IconButton(
-                                        icon: const Icon(FontAwesomeIcons.google),
-                                        onPressed: () {
-                                          signInWithGoogle().then((value) {
-                                            setState(() {
-                                              visible = !visible;
-                                            });
-                                            _titleSlideDownAnimationController.forward();
-                                            Future.delayed(const Duration(seconds: 2)).then((value) {
-                                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> const GuidedAccountSetup()));
-                                            });
-                                          });
-                                        },
                                       ),
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
