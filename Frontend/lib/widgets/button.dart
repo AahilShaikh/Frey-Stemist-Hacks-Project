@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class SizedButtion extends StatelessWidget {
   SizedButtion(
       {required this.onPressed,
-        required this.text,
-        required this.width,
-        required this.height,
-        required this.fontSize});
+      required this.text,
+      required this.width,
+      required this.height,
+      required this.fontSize});
 
   final GestureTapCallback onPressed;
   final String text;
@@ -24,21 +24,24 @@ class SizedButtion extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           elevation: 20,
-          primary: Colors.white,
-          onPrimary: Colors.black,
+          primary: Colors.blue,
+          onPrimary: Colors.white,
           enableFeedback: true,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18.0),
-            side: const BorderSide(color: Colors.black),
+            borderRadius: BorderRadius.circular(20.0),
+            side: const BorderSide(
+              color: Colors.white,
+              width: 2.0,
+            ),
           ),
         ),
         child: Text(
           text,
           style: TextStyle(
             fontSize: fontSize,
-            fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
+          textAlign: TextAlign.center,
         ),
       ),
     );
@@ -48,9 +51,9 @@ class SizedButtion extends StatelessWidget {
 class ExpandedButton extends StatelessWidget {
   ExpandedButton(
       {required this.onPressed,
-        required this.text,
-        required this.flex,
-        required this.fontSize});
+      required this.text,
+      required this.flex,
+      required this.fontSize});
 
   final GestureTapCallback onPressed;
   final String text;
@@ -61,7 +64,7 @@ class ExpandedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: flex,
-      child:  ElevatedButton(
+      child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           elevation: 20,

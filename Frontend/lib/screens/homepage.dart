@@ -43,9 +43,10 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => ApiScrap()),
                     ),
                 text: "Demo Scraping",
-                width: 200,
-                height: 100,
-                fontSize: 20)
+                width: 150,
+                height: 75,
+                fontSize: 20),
+            const Spacer(),
           ],
         ),
       ),
