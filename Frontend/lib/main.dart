@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hackathon/screens/homepage.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
