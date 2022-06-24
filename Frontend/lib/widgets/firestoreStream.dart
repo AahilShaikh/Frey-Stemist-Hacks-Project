@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SizedButtion extends StatelessWidget {
   SizedButtion({required this.stream, required this.height, required this.whatData});
 
-  final String stream;
+final String stream;
  final double height;
  final String whatData;
 
