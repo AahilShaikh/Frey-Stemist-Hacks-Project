@@ -7,6 +7,7 @@ import 'package:hackathon/screens/homepage.dart';
 
 import '../../services/validator.dart';
 import '../../widgets/notification.dart';
+import '../background.dart';
 import 'auth_button.dart';
 import 'login.dart';
 
@@ -338,7 +339,7 @@ class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
                                                   Navigator.of(context)
                                                       .pushReplacement(
                                                     PageRouteBuilder(
-                                                      pageBuilder: (context, a1, a2) => const HomePage(),
+                                                      pageBuilder: (context, a1, a2) => const Background(),
                                                       transitionsBuilder: (context, anim, a2, child) => FadeTransition(opacity: anim, child: child),
                                                       transitionDuration: const Duration(milliseconds: 2000),
                                                     ),

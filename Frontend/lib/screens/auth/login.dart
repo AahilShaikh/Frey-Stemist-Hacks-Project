@@ -7,6 +7,7 @@ import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 import 'package:hackathon/screens/auth/sign_up.dart';
 
 import '../../services/validator.dart';
+import '../background.dart';
 import '../homepage.dart';
 import '../../widgets/notification.dart';
 import 'auth_button.dart';
@@ -335,7 +336,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                                 });
                                                 
                                                 Future.delayed(const Duration(seconds: 2)).then((value) {
-                                                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
+                                                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Background()));
                                                 });
                                               }).catchError((error) {
                                                 ScaffoldMessenger.of(context).showSnackBar(notification("Authentication Failed", context));
