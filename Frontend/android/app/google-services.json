@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "719775625488",
+    "project_id": "frey-stemist-hacks-project",
+    "storage_bucket": "frey-stemist-hacks-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719775625488:android:f3403398572babc7d8b595",
+        "android_client_info": {
+          "package_name": "com.example.hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719775625488-vde8tn0u8hvhd39rfpjhhfk22hgfq12s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_LeXlHPf2Iz54EiE4A48K367O40HQwM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719775625488-vde8tn0u8hvhd39rfpjhhfk22hgfq12s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
