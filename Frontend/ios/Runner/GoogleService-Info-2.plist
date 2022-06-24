@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>719775625488-s545uvli35jeh0cb2fht7f4gkjhk8330.apps.googleusercontent.com</string>
+	<string>719775625488-clue9k0te12skcmp25q9qdkfbcqjtkdj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.719775625488-s545uvli35jeh0cb2fht7f4gkjhk8330</string>
+	<string>com.googleusercontent.apps.719775625488-clue9k0te12skcmp25q9qdkfbcqjtkdj</string>
 	<key>API_KEY</key>
 	<string>AIzaSyD4LHgHOJQig4jc6nF8lYi_adBZzq08KXE</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.hackathon</string>
+	<string>com.example.hackithon</string>
 	<key>PROJECT_ID</key>
 	<string>frey-stemist-hacks-project</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:719775625488:ios:f09ad34160afaac3d8b595</string>
+	<string>1:719775625488:ios:94a47d6da30f9d3dd8b595</string>
 </dict>
 </plist>
