@@ -46,8 +46,8 @@ class SizedButtion extends StatelessWidget {
   }
 }
 
-class ExpandedButtion extends StatelessWidget {
-  ExpandedButtion(
+class ExpandedButton extends StatelessWidget {
+  ExpandedButton(
       {required this.onPressed,
         required this.text,
         required this.flex,
