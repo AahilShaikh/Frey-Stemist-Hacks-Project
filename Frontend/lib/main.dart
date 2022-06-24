@@ -20,7 +20,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
-          headline1: TextStyle(color: Colors.white, fontSize: 80),
+          headline1: TextStyle(color: Colors.white, fontSize: 60),
         ),
       ),
       home: SplashScreen(),
