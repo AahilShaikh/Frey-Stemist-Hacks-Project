@@ -1,7 +1,6 @@
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon/widgets/button.dart';
-
 import 'apiScrap.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(      
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
