@@ -1,22 +1,21 @@
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:hackathon/widgets/button.dart';
 
-import 'apiScrap.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class ApiScrap extends StatefulWidget {
+  const ApiScrap({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ApiScrap> createState() => _ApiScrap();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ApiScrap extends State<ApiScrap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
+        child:
+        Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -34,18 +33,7 @@ class _HomePageState extends State<HomePage> {
                 textAlign: TextAlign.center,
               ),
             ),
-            Spacer(
-              flex: 2,
-            ),
-            SizedButtion(
-                onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ApiScrap()),
-                    ),
-                text: "Demo Scraping",
-                width: 200,
-                height: 100,
-                fontSize: 20)
+            Spacer(flex: 2,),
           ],
         ),
       ),

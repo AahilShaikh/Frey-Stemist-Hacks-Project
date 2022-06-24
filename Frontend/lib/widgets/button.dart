@@ -37,8 +37,7 @@ class SizedButtion extends StatelessWidget {
           style: TextStyle(
             fontSize: fontSize,
             fontWeight: FontWeight.bold,
-            fontFamily: 'Lato',
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
       ),
