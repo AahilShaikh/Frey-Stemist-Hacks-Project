@@ -35,12 +35,14 @@ dependencies:
   fab_circular_menu: ^1.0.2
   firebase_auth: ^3.3.13
   firebase_core: ^1.13.1
+  floating_frosted_bottom_bar: ^0.0.1
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.1.6
   font_awesome_flutter: ^10.1.0
   glassmorphism_ui: ^0.3.0
   google_fonts: ^3.0.1
+  translucent_navigation_bar: ^1.0.0
 
 dev_dependencies:
   flutter_test:

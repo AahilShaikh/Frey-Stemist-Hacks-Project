@@ -1,8 +1,6 @@
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
 
-import 'auth/sign_up.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -17,16 +15,21 @@ class _HomePageState extends State<HomePage> {
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          width: MediaQuery.of(context).size.width-40,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            image: DecorationImage(image: AssetImage("assets/image/beach.jpg"), fit: BoxFit.cover)
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: 80,
+          child: Container(
+            width: MediaQuery.of(context).size.width-40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              image: DecorationImage(image: AssetImage("assets/images/beach.jpg"), fit: BoxFit.cover)
+            ),
+            child: Text("Welcome Back", style: Theme.of(context).textTheme.headline1,),
           ),
-          child: Text("Welcome Back", style: Theme.of(context).textTheme.headline1,),
         )
       ],
     ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     floatingActionButton: FabCircularMenu(
       children: <Widget>[
         IconButton(

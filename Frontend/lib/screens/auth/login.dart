@@ -326,13 +326,14 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                             if (usernameController.text.isEmpty || passwordController.text.isEmpty) {
                                               ScaffoldMessenger.of(context).showSnackBar(notification("Please fill in all the fields", context));
                                             } else {
+                                              _titleSlideDownAnimationController.forward();
                                               FirebaseAuth.instance
                                                   .signInWithEmailAndPassword(email: usernameController.text, password: passwordController.text)
                                                   .then((value) {
                                                 setState(() {
                                                   visible = !visible;
                                                 });
-                                                _titleSlideDownAnimationController.forward();
+                                                
                                                 Future.delayed(const Duration(seconds: 2)).then((value) {
                                                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
                                                 });

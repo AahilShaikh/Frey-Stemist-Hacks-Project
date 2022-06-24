@@ -183,6 +183,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.5"
+  floating_frosted_bottom_bar:
+    dependency: "direct main"
+    description:
+      name: floating_frosted_bottom_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -212,6 +219,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "10.1.0"
+  glassmorphism:
+    dependency: transitive
+    description:
+      name: glassmorphism
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   glassmorphism_ui:
     dependency: "direct main"
     description:
@@ -420,6 +434,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.9"
+  translucent_navigation_bar:
+    dependency: "direct main"
+    description:
+      name: translucent_navigation_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   typed_data:
     dependency: transitive
     description:
