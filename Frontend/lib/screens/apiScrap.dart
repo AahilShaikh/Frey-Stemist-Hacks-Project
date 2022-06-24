@@ -13,6 +13,9 @@ class _ApiScrap extends State<ApiScrap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("API Test"),
+      ),
       body: Center(
         child:
         Column(
@@ -37,17 +40,6 @@ class _ApiScrap extends State<ApiScrap> {
           ],
         ),
       ),
-      floatingActionButton: FabCircularMenu(children: <Widget>[
-        IconButton(
-          icon: Icon(Icons.travel_explore),
-          tooltip: "Create a new trip",
-          onPressed: () {},
-        ),
-        IconButton(
-            icon: Icon(Icons.add_location_alt),
-            tooltip: "Add a new activity",
-            onPressed: () {})
-      ]),
     );
   }
 }
