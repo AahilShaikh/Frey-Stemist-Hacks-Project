@@ -6,7 +6,7 @@ import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 import 'package:hackathon/screens/homepage.dart';
 
 import '../../services/validator.dart';
-import '../notification.dart';
+import '../../widgets/notification.dart';
 import 'auth_button.dart';
 import 'login.dart';
 
