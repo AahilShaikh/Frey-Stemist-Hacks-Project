@@ -1,5 +1,7 @@
-import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+
+import '../widgets/clearAppBar.dart';
 
 class ApiScrap extends StatefulWidget {
   const ApiScrap({Key? key}) : super(key: key);
@@ -12,8 +14,12 @@ class _ApiScrap extends State<ApiScrap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("API Test"),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(100),
+        child: clearAppBar(
+          text: '534',
+          fontSize: 20,
+        ),
       ),
       body: Center(
         child: Column(
@@ -34,7 +40,7 @@ class _ApiScrap extends State<ApiScrap> {
               ),
             ),
             Spacer(
-              flex: 2,
+              flex: 4,
             ),
           ],
         ),
