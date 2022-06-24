@@ -28,16 +28,13 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animated_background: ^2.0.0
-  animated_text_kit: ^4.2.1
   animations: ^2.0.2
   auto_size_text: ^3.0.0
-  auto_size_text_field: ^2.1.0
   cloud_firestore: ^3.1.10
   cupertino_icons: ^1.0.2
-  file_picker: ^4.5.1
+  fab_circular_menu: ^1.0.2
   firebase_auth: ^3.3.13
   firebase_core: ^1.13.1
-  flip_card: ^0.6.0
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.1.6
@@ -53,14 +50,9 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-    # - assets/images/background.webp
+  assets:
+    - assets/images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

@@ -1,0 +1,5 @@
+enum ActivityType{
+  Flight,
+  Activity,
+  
+}

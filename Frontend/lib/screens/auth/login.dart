@@ -8,7 +8,7 @@ import 'package:hackathon/screens/auth/sign_up.dart';
 
 import '../../services/validator.dart';
 import '../homepage.dart';
-import '../notification.dart';
+import '../../widgets/notification.dart';
 import 'auth_button.dart';
 
 class LoginPage extends StatefulWidget {
