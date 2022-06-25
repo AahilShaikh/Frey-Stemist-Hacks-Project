@@ -84,31 +84,31 @@ class _RecomdationsState extends State<Recomdations> {
                 child: Column(
                   children: [
                     Spacer(),
-                    RowText(text: "What Event?", fontSize: 20, text2: data1),
+                    RowText(text: "What Event?", fontSize: 15, text2: data1),
                     Divider(
                       thickness: 4,
                       color: Colors.white,
                     ),
                     Spacer(),
-                    RowText(text: "Where?", fontSize: 20, text2: data2),
+                    RowText(text: "Where?", fontSize: 15, text2: data2),
                     Divider(
                       thickness: 4,
                       color: Colors.white,
                     ),
                     Spacer(),
-                    RowText(text: "Date?", fontSize: 20, text2: data3),
+                    RowText(text: "Date?", fontSize: 15, text2: data3),
                     Divider(
                       thickness: 4,
                       color: Colors.white,
                     ),
                     Spacer(),
-                    RowText(text: "Time?", fontSize: 20, text2: data4),
+                    RowText(text: "Time?", fontSize: 15, text2: data4),
                     Divider(
                       thickness: 4,
                       color: Colors.white,
                     ),
                     Spacer(),
-                    RowText(text: "Cost?", fontSize: 20, text2: data5),
+                    RowText(text: "Cost?", fontSize: 15, text2: data5),
                     Divider(
                       thickness: 4,
                       color: Colors.white,
@@ -118,7 +118,7 @@ class _RecomdationsState extends State<Recomdations> {
                 ),
               ),
             ),
-            Spacer(),
+            Spacer(flex: 4,),
           ],
         ),
       ),
