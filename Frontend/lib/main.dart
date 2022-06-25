@@ -6,8 +6,9 @@ import 'package:hackathon/screens/splash_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    // name: "frey-stemist-hacks-project",
-    ///todo this is giving errors so i just commented it out
+    //keep this line otherwise it'll conflict with other firebase projects
+    name: "frey-stemist-hacks-project",
+    
     options: const FirebaseOptions(
       apiKey: "AIzaSyDQl2ZPwy2w1JeRBjW8PPMUg-Upxl-_Yw8",
       authDomain: "frey-stemist-hacks-project.firebaseapp.com",

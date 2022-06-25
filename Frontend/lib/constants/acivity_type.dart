@@ -1,5 +1,7 @@
 enum ActivityType{
   Flight,
-  Activity,
-  
+  Dining,
+  Home,
+  Event
+
 }
