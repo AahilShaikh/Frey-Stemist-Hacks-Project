@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hackathon/widgets/button.dart';
 
-class SizedButtion extends StatelessWidget {
-  SizedButtion({required this.stream, required this.height, required this.whatData});
+class Streaming extends StatelessWidget {
+  Streaming(
+      {required this.stream,
+      required this.height,
+      required this.whatData,
+      required this.onPressed});
 
-final String stream;
- final double height;
- final String whatData;
+  final String stream;
+  final double height;
+  final String whatData;
+  final GestureTapCallback onPressed;
 
-@override
+  @override
   Widget build(BuildContext context) {
+    final Stream<QuerySnapshot> data =
+        FirebaseFirestore.instance.collection(stream).snapshots();
 
-  final Stream<QuerySnapshot> data =
-  FirebaseFirestore.instance.collection(stream).snapshots();
-
-  return Padding(
+    return Padding(
       padding: const EdgeInsets.all(20),
       child: SizedBox(
         height: height,
@@ -37,12 +42,14 @@ final String stream;
                 itemCount: display.size,
                 itemBuilder: (context, index) {
                   return Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Text(
-                        display.docs[index][whatData].toString(),
-                        style: const TextStyle(fontSize: 20),
-                        textAlign: TextAlign.center,
-                      ));
+                    padding: const EdgeInsets.all(10),
+                    child:
+                    SizedButtion(
+                      onPressed: onPressed,
+                      text: display.docs[index][whatData].toString(),
+                      width: 50,
+                      height: 25,
+                      fontSize: 10),);
                 },
               );
             } else {

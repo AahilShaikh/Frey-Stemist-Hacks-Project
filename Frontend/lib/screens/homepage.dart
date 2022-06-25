@@ -1,7 +1,9 @@
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon/widgets/button.dart';
+import '../widgets/firestoreStream.dart';
 import 'apiScrap.dart';
+import 'more_detail.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(      
+    return Scaffold(
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,8 +35,18 @@ class _HomePageState extends State<HomePage> {
                 textAlign: TextAlign.center,
               ),
             ),
+            Spacer(),
+            Streaming(
+              whatData: 'test',
+              height: 300,
+              stream: 'test',
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MoreDetail()),
+              ),
+            ),
             Spacer(
-              flex: 2,
+              flex: 1,
             ),
             SizedButtion(
                 onPressed: () => Navigator.push(
@@ -49,17 +61,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      // floatingActionButton: FabCircularMenu(children: <Widget>[
-      //   IconButton(
-      //     icon: Icon(Icons.travel_explore),
-      //     tooltip: "Create a new trip",
-      //     onPressed: () {},
-      //   ),
-      //   IconButton(
-      //       icon: Icon(Icons.add_location_alt),
-      //       tooltip: "Add a new activity",
-      //       onPressed: () {})
-      // ]),
     );
   }
 }
