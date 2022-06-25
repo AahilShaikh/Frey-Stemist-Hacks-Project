@@ -1,4 +1,5 @@
 import 'package:floating_frosted_bottom_bar/app/frosted_bottom_bar.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:translucent_navigation_bar/translucent_navigation_bar.dart';
 
@@ -78,13 +79,14 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
           borderRadius: BorderRadius.circular(500),
           duration: const Duration(milliseconds: 800),
           hideOnScroll: true,
-          body: (context, controller) => ListView(
+          body: (context, controller) => TabBarView(
             // shrinkWrap: false,
-            controller: controller,
+            controller: tabController,
+            dragStartBehavior: DragStartBehavior.down,
+            physics: const BouncingScrollPhysics(),
             children: [
-
-              //TODO changed to _selectedIndex
-              children[1]
+              HomePage(),
+              AccountPage(),
             ],
           ),
         )
