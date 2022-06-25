@@ -27,10 +27,13 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   image: DecorationImage(image: AssetImage("assets/images/beach.jpg"), fit: BoxFit.cover)),
-              child: Text(
-                "Welcome Back",
-                style: Theme.of(context).textTheme.headline1,
-                textAlign: TextAlign.center,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Welcome Back",
+                  style: Theme.of(context).textTheme.headline1,
+                  textAlign: TextAlign.left,
+                ),
               ),
             ),
             Spacer(),

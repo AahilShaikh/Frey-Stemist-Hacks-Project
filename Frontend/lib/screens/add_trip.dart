@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -37,7 +38,7 @@ class _AddTripState extends State<AddTrip> {
           ),
           Row(
             children: [
-              Expanded(child: Text("Enter your trip's name: ")),
+              Expanded(child: AutoSizeText("Enter your trip's name: ", style: TextStyle(color: Colors.black),)),
               Expanded(
                 child: TextField(
                   controller: _tripNameController,
@@ -55,7 +56,9 @@ class _AddTripState extends State<AddTrip> {
                 child: TextField(
                   controller: _emailController,
                   onSubmitted: (String email) {
-                    emails.add(email);
+                    setState(() {
+                      emails.add(email);
+                    });
                     _emailController.clear();
                   },
                 ),
@@ -86,9 +89,9 @@ class _AddTripState extends State<AddTrip> {
             onPressed: () {
               SetOptions options = SetOptions(merge: true);
               for (String email in emails) {
-                firebase.collection("Users").doc(email).collection("Trips").doc(tripID).set({"Trip ID": tripID}, options);
+                firebase.collection("Users").doc(email).collection("Trips").doc(tripID).set({"Trip ID": tripID, "Name" : _tripNameController.text}, options);
               }
-              firebase.collection("Trips").doc(tripID).set({"Trip ID": tripID}, options);
+              firebase.collection("Trips").doc(tripID).set({"Trip ID": tripID, "Name" : _tripNameController.text}, options);
               Navigator.pop(context);
             },
             child: Text("Save"),

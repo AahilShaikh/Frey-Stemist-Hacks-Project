@@ -5,6 +5,7 @@ import 'package:flutter_arc_speed_dial/main_menu_floating_action_button.dart';
 import 'package:hackathon/screens/add_trip.dart';
 
 import 'account_page.dart';
+import 'add_event.dart';
 import 'homepage.dart';
 
 class Background extends StatefulWidget {
@@ -57,11 +58,14 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
         body: children[_selectedIndex],
         bottomNavigationBar: AnimatedBottomNavigationBar(
           icons: [Icons.home, Icons.settings],
-          backgroundColor: Colors.grey,
+          backgroundColor: Color(0xff0c5fb3),
+          activeColor: Colors.white,
+          splashColor: Colors.lightBlue,
           activeIndex: _selectedIndex,
-          gapLocation: GapLocation.center,
+          gapLocation: GapLocation.none,
           notchSmoothness: NotchSmoothness.defaultEdge,
           leftCornerRadius: 32,
+          rightCornerRadius: 32,
           onTap: (index) => setState(() => _selectedIndex = index),
           //other params
         ),
@@ -87,7 +91,9 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
             FloatingActionButton(
               mini: true,
               child: Icon(Icons.add),
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(context: context, builder: (BuildContext context) => AddEvent());
+              },
               backgroundColor: Colors.lightBlue,
             ),
           ],
