@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
             Spacer(),
             Streaming(
               whatData: 'test',
-              height: 300,
+              height: 200,
               stream: 'test',
               onPressed: () => Navigator.push(
                 context,
@@ -51,9 +51,9 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => ApiScrap()),
                     ),
                 text: "Demo Scraping",
-                width: 150,
+                width: 120,
                 height: 75,
-                fontSize: 20),
+                fontSize: 15),
             const Spacer(),
           ],
         ),

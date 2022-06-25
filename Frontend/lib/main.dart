@@ -8,15 +8,15 @@ void main() async {
   await Firebase.initializeApp(
     // name: "frey-stemist-hacks-project",
     ///todo this is giving errors so i just commented it out
-    options: const FirebaseOptions(
-      apiKey: "AIzaSyDQl2ZPwy2w1JeRBjW8PPMUg-Upxl-_Yw8",
-      authDomain: "frey-stemist-hacks-project.firebaseapp.com",
-      projectId: "frey-stemist-hacks-project",
-      storageBucket: "frey-stemist-hacks-project.appspot.com",
-      messagingSenderId: "719775625488",
-      appId: "1:719775625488:web:0c247574cf5b1c72d8b595",
-      measurementId: "G-71V6HLRTME",
-    ),
+    // options: const FirebaseOptions(
+    //   apiKey: "AIzaSyDQl2ZPwy2w1JeRBjW8PPMUg-Upxl-_Yw8",
+    //   authDomain: "frey-stemist-hacks-project.firebaseapp.com",
+    //   projectId: "frey-stemist-hacks-project",
+    //   storageBucket: "frey-stemist-hacks-project.appspot.com",
+    //   messagingSenderId: "719775625488",
+    //   appId: "1:719775625488:web:0c247574cf5b1c72d8b595",
+    //   measurementId: "G-71V6HLRTME",
+    // ),
     ///Do this when testing web
   );
   runApp(const App());
