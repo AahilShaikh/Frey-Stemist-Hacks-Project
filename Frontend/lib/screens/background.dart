@@ -65,7 +65,7 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
           onTap: (index) => setState(() => _selectedIndex = index),
           //other params
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: SpeedDialMenuButton(
           isMainFABMini: false,
           mainMenuFloatingActionButton: MainMenuFloatingActionButton(
