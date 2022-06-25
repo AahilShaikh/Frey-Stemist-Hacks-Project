@@ -1,13 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SizedButtion extends StatelessWidget {
-  SizedButtion(
-      {required this.onPressed,
-      required this.text,
-      required this.width,
-      required this.height,
-      required this.fontSize});
+class SizedButton extends StatelessWidget {
+  SizedButton({required this.onPressed, required this.text, required this.width, required this.height, required this.fontSize});
 
   final GestureTapCallback onPressed;
   final String text;
@@ -49,11 +44,7 @@ class SizedButtion extends StatelessWidget {
 }
 
 class ExpandedButton extends StatelessWidget {
-  ExpandedButton(
-      {required this.onPressed,
-      required this.text,
-      required this.flex,
-      required this.fontSize});
+  ExpandedButton({required this.onPressed, required this.text, required this.flex, required this.fontSize});
 
   final GestureTapCallback onPressed;
   final String text;

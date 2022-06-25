@@ -18,10 +18,12 @@ class _ActivityState extends State<Activity> {
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => widget.moreActivity));
       },
       child: Container(
-        decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20))),
+        decoration: BoxDecoration(
+          color: widget.color,
+          borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Row(
           children: [
-            Text(widget.title, style: Theme.of(context).textTheme.headline2),
+            Text(widget.title, style: TextStyle(fontSize: 30)),
             
           ],
         )

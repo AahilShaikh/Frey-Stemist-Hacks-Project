@@ -1,10 +1,9 @@
-import 'package:fab_circular_menu/fab_circular_menu.dart';
-import 'package:floating_frosted_bottom_bar/app/frosted_bottom_bar.dart';
-import 'package:flutter/gestures.dart';
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:translucent_navigation_bar/translucent_navigation_bar.dart';
+import 'package:flutter_arc_speed_dial/flutter_speed_dial_menu_button.dart';
+import 'package:flutter_arc_speed_dial/main_menu_floating_action_button.dart';
+import 'package:hackathon/screens/add_trip.dart';
 
-import '../models/tabs_icon.dart';
 import 'account_page.dart';
 import 'homepage.dart';
 
@@ -15,8 +14,7 @@ class Background extends StatefulWidget {
   State<Background> createState() => _BackgroundState();
 }
 
-class _BackgroundState extends State<Background>
-    with SingleTickerProviderStateMixin {
+class _BackgroundState extends State<Background> with SingleTickerProviderStateMixin {
   late int currentPage;
   late TabController tabController;
 
@@ -56,51 +54,45 @@ class _BackgroundState extends State<Background>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FrostedBottomBar(
-        opacity: 0.6,
-        sigmaX: 5,
-        sigmaY: 5,
-        child: TabBar(
-          indicatorPadding: const EdgeInsets.fromLTRB(6, 0, 6, 0),
-          controller: tabController,
-          indicator: const UnderlineTabIndicator(
-            borderSide: BorderSide(color: Colors.blue, width: 4),
-            insets: EdgeInsets.fromLTRB(16, 0, 16, 8),
-          ),
-          tabs: [
-            TabsIcon(
-                icons: Icons.home,
-                color: currentPage == 0 ? Colors.grey : Colors.white),
-            TabsIcon(
-                icons: Icons.settings,
-                color: currentPage == 1 ? Colors.grey : Colors.white),
+        body: children[_selectedIndex],
+        bottomNavigationBar: AnimatedBottomNavigationBar(
+          icons: [Icons.home, Icons.settings],
+          backgroundColor: Colors.grey,
+          activeIndex: _selectedIndex,
+          gapLocation: GapLocation.center,
+          notchSmoothness: NotchSmoothness.defaultEdge,
+          leftCornerRadius: 32,
+          onTap: (index) => setState(() => _selectedIndex = index),
+          //other params
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: SpeedDialMenuButton(
+          isMainFABMini: false,
+          mainMenuFloatingActionButton: MainMenuFloatingActionButton(
+              mini: false,
+              child: Icon(Icons.add),
+              onPressed: () {},
+              closeMenuChild: Icon(Icons.close),
+              closeMenuForegroundColor: Colors.white,
+              closeMenuBackgroundColor: Colors.red),
+          floatingActionButtonWidgetChildren: <FloatingActionButton>[
+            FloatingActionButton(
+              mini: true,
+              child: Icon(Icons.add_location_alt_rounded),
+              onPressed: () {
+                showModalBottomSheet(context: context, builder: (BuildContext context) => AddTrip());
+              },
+              backgroundColor: Colors.lightBlue,
+            ),
+            FloatingActionButton(
+              mini: true,
+              child: Icon(Icons.add),
+              onPressed: () {},
+              backgroundColor: Colors.lightBlue,
+            ),
           ],
-        ),
-        borderRadius: BorderRadius.circular(500),
-        duration: const Duration(milliseconds: 800),
-        hideOnScroll: true,
-        body: (context, controller) => TabBarView(
-          // shrinkWrap: false,
-          controller: tabController,
-          dragStartBehavior: DragStartBehavior.down,
-          physics: const BouncingScrollPhysics(),
-          children: [
-            HomePage(),
-            AccountPage(),
-          ],
-        ),
-      ),
-      floatingActionButton: FabCircularMenu(children: <Widget>[
-        IconButton(
-          icon: Icon(Icons.travel_explore),
-          tooltip: "Create a new trip",
-          onPressed: () {},
-        ),
-        IconButton(
-            icon: Icon(Icons.add_location_alt),
-            tooltip: "Add a new activity",
-            onPressed: () {})
-      ]),
-    );
+          isSpeedDialFABsMini: true,
+          paddingBtwSpeedDialButton: 30.0,
+        ));
   }
 }

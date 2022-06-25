@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hackathon/screens/more_detail.dart';
+import 'package:hackathon/widgets/activity.dart';
 import 'package:hackathon/widgets/button.dart';
 
 class Streaming extends StatelessWidget {
-  Streaming(
-      {required this.stream,
-      required this.height,
-      required this.whatData,
-      required this.onPressed});
+  Streaming({required this.stream, required this.height, required this.whatData, required this.onPressed});
 
   final String stream;
   final double height;
@@ -16,8 +14,7 @@ class Streaming extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Stream<QuerySnapshot> data =
-        FirebaseFirestore.instance.collection(stream).snapshots();
+    final Stream<QuerySnapshot> data = FirebaseFirestore.instance.collection(stream).snapshots();
 
     return Padding(
       padding: const EdgeInsets.all(20),
@@ -30,8 +27,7 @@ class Streaming extends StatelessWidget {
             AsyncSnapshot<QuerySnapshot> snapshot,
           ) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const SizedBox(
-                  height: 250, width: 250, child: CircularProgressIndicator());
+              return const SizedBox(height: 250, width: 250, child: CircularProgressIndicator());
             }
             if (snapshot.hasError) {
               return const Text('Error');
@@ -43,14 +39,10 @@ class Streaming extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(10),
-                    child:
-                    SizedButtion(
-                      onPressed: onPressed,
-                      text: display.docs[index][whatData].toString(),
-                      width: 50,
-                      height: 25,
-                      fontSize: 10),);
+                    child: Activity(color: Colors.blue, title: display.docs[index][whatData].toString(), moreActivity: MoreDetail(),)                    
+                  );
                 },
+                
               );
             } else {
               return const CircularProgressIndicator();

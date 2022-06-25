@@ -1,4 +1,3 @@
-import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon/widgets/button.dart';
 import '../widgets/firestoreStream.dart';
@@ -26,9 +25,7 @@ class _HomePageState extends State<HomePage> {
               width: MediaQuery.of(context).size.width - 40,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/beach.jpg"),
-                      fit: BoxFit.cover)),
+                  image: DecorationImage(image: AssetImage("assets/images/beach.jpg"), fit: BoxFit.cover)),
               child: Text(
                 "Welcome Back",
                 style: Theme.of(context).textTheme.headline1,
@@ -48,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             Spacer(
               flex: 1,
             ),
-            SizedButtion(
+            SizedButton(
                 onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ApiScrap()),

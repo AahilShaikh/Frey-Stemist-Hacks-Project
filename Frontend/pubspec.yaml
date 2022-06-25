@@ -28,22 +28,21 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animated_background: ^2.0.0
+  animated_bottom_navigation_bar: ^1.0.0
   animations: ^2.0.2
   auto_size_text: ^3.0.0
   cloud_firestore: ^3.1.10
   cupertino_icons: ^1.0.2
-  fab_circular_menu: ^1.0.2
   firebase_auth: ^3.3.13
   firebase_core: ^1.13.1
-  floating_frosted_bottom_bar: ^0.0.1
   flutter:
     sdk: flutter
+  flutter_arc_speed_dial: ^2.0.1
   flutter_native_splash: ^2.1.6
   font_awesome_flutter: ^10.1.0
   glassmorphism_ui: ^0.3.0
-  google_fonts: ^3.0.1
   http: ^0.13.4
-  translucent_navigation_bar: ^1.0.0
+  uuid: ^3.0.6
 
 dev_dependencies:
   flutter_test:
