@@ -49,17 +49,17 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: FabCircularMenu(children: <Widget>[
-        IconButton(
-          icon: Icon(Icons.travel_explore),
-          tooltip: "Create a new trip",
-          onPressed: () {},
-        ),
-        IconButton(
-            icon: Icon(Icons.add_location_alt),
-            tooltip: "Add a new activity",
-            onPressed: () {})
-      ]),
+      // floatingActionButton: FabCircularMenu(children: <Widget>[
+      //   IconButton(
+      //     icon: Icon(Icons.travel_explore),
+      //     tooltip: "Create a new trip",
+      //     onPressed: () {},
+      //   ),
+      //   IconButton(
+      //       icon: Icon(Icons.add_location_alt),
+      //       tooltip: "Add a new activity",
+      //       onPressed: () {})
+      // ]),
     );
   }
 }
