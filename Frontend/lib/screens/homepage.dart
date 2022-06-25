@@ -41,9 +41,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(
-              flex: 2,
-            ),
+
             Container(
               width: MediaQuery.of(context).size.width - 40,
               decoration: BoxDecoration(
