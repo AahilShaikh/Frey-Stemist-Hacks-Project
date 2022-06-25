@@ -45,6 +45,19 @@ class _RecomdationsState extends State<Recomdations> {
 
   @override
   Widget build(BuildContext context) {
+    if (data1 == "Loading.....")
+      return Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(100),
+          child: clearAppBar(
+            text: 'Recommendations',
+            fontSize: 20,
+          ),
+        ),
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
