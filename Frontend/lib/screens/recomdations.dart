@@ -5,14 +5,14 @@ import 'package:hackathon/widgets/RowDisplay.dart';
 import '../widgets/clearAppBar.dart';
 import '../widgets/showOneFirestore.dart';
 
-class Recomdations extends StatefulWidget {
-  const Recomdations({Key? key}) : super(key: key);
+class Reccomendations extends StatefulWidget {
+  const Reccomendations({Key? key}) : super(key: key);
 
   @override
-  _RecomdationsState createState() => _RecomdationsState();
+  _ReccomendationsState createState() => _ReccomendationsState();
 }
 
-class _RecomdationsState extends State<Recomdations> {
+class _ReccomendationsState extends State<Reccomendations> {
   late String data1;
   late String data2;
   late String data3;
@@ -118,7 +118,9 @@ class _RecomdationsState extends State<Recomdations> {
                 ),
               ),
             ),
-            Spacer(flex: 4,),
+            Spacer(
+              flex: 4,
+            ),
           ],
         ),
       ),
