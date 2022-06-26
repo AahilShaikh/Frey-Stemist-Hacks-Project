@@ -25,3 +25,31 @@ class clearAppBar extends StatelessWidget {
     );
   }
 }
+
+class clearAppBarWithButtion extends StatelessWidget {
+  const clearAppBarWithButtion({super.key, required this.text, required this.fontSize, required this.onPressed, required this.whaticon});
+
+  final String text;
+  final double fontSize;
+  final GestureTapCallback onPressed;
+  final IconData whaticon;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading: IconButton(
+        icon:  Icon(whaticon, color: Colors.black),
+        onPressed: onPressed,
+      ),
+      title: Text(
+        text,
+        style: TextStyle(
+          fontSize: fontSize,
+          color: Colors.black,
+        ),
+      ),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    );
+  }
+}

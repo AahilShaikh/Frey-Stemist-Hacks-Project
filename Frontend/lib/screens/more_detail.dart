@@ -10,6 +10,8 @@ class MoreDetail extends StatefulWidget {
 class _MoreDetailState extends State<MoreDetail> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Text('More Detail'),
+    );
   }
 }
