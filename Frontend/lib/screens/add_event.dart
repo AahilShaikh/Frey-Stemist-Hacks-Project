@@ -42,7 +42,7 @@ class _AddEventState extends State<AddEvent> {
                 query.docs.forEach((element) {
                   Map<String, dynamic> data = element.data() as Map<String, dynamic>;
                   print(data);
-                  trips[data["Name"]] = data["Trip ID"];
+                  trips[data["Name"]] = data["Trip ID"].toString();
                 });
 
                 return Flexible(
@@ -143,13 +143,13 @@ class _AddEventState extends State<AddEvent> {
               ),
             ),
             if (type == ActivityType.Flight)
-              FlightQuestions(tripID: trips[_currentTrip])
+              FlightQuestions(tripID: trips[_currentTrip].toString())
             else if (type == ActivityType.Dining)
-              DiningQuestions(tripID: trips[_currentTrip])
+              DiningQuestions(tripID: trips[_currentTrip].toString())
             else if (type == ActivityType.Home)
-              GeneralReminder(tripID: trips[_currentTrip])
+              GeneralReminder(tripID: trips[_currentTrip].toString())
             else if (type == ActivityType.Event)
-              EventQuestions(tripID: trips[_currentTrip])
+              EventQuestions(tripID: trips[_currentTrip].toString())
             else
               Text(
                 "Choose An Activity Type",
@@ -330,9 +330,9 @@ class _EventQuestionsState extends State<EventQuestions> {
           onPressed: () {
             FirebaseFirestore.instance
                 .collection("Trips")
-                .doc(widget.tripID)
+                .doc(widget.tripID.toString())
                 .collection("Events")
-                .doc(eventID)
+                .doc(eventID.toString())
                 .set({"Event Type": "Dining", "Date": date, "Title": _title.text}, SetOptions(merge: true));
             Navigator.pop(context);
           },
