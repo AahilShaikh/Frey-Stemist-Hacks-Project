@@ -35,6 +35,7 @@ class Streaming extends StatelessWidget {
             final display = snapshot.requireData;
             if (snapshot.hasData) {
               return ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
                 itemCount: display.size,
                 itemBuilder: (context, index) {
                   return Padding(

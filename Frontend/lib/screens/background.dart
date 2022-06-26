@@ -84,7 +84,9 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
               mini: true,
               child: Icon(Icons.add_location_alt_rounded),
               onPressed: () {
-                showModalBottomSheet(context: context, builder: (BuildContext context) => AddTrip());
+                showModalBottomSheet(context: context,
+                    isScrollControlled: true,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))), builder: (BuildContext context) => AddTrip());
               },
               backgroundColor: Colors.lightBlue,
             ),
@@ -92,7 +94,8 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
               mini: true,
               child: Icon(Icons.add),
               onPressed: () {
-                showModalBottomSheet(context: context, builder: (BuildContext context) => AddEvent());
+                showModalBottomSheet(context: context, isScrollControlled: true, shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))), builder: (BuildContext context) => AddEvent());
               },
               backgroundColor: Colors.lightBlue,
             ),
