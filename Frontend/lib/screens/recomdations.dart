@@ -47,31 +47,17 @@ class _ReccomendationsState extends State<Reccomendations> {
   Widget build(BuildContext context) {
     if (data1 == "Loading.....")
       return Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(100),
-          child: clearAppBar(
-            text: 'Recommendations',
-            fontSize: 20,
-          ),
-        ),
         body: Center(
           child: CircularProgressIndicator(),
         ),
       );
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100),
-        child: clearAppBar(
-          text: 'Recommendations',
-          fontSize: 20,
-        ),
-      ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(),
+            Spacer(flex: 2,),
             Expanded(
               flex: 20,
               child: Container(

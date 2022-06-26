@@ -40,7 +40,7 @@ class Streaming extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(10),
-                    child: Activity(color: Colors.blue, title: display.docs[index][whatData].toString(), moreActivity: MoreDetail(),)                    
+                    child: Activity(color: Colors.blue, title: display.docs[index][whatData].toString(), moreActivity: MoreDetail(), )                    
                   );
                 },
                 

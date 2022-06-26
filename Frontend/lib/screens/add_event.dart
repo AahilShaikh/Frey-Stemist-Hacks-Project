@@ -218,9 +218,13 @@ class _FlightQuestionsState extends State<FlightQuestions> {
         TextButton(
           child: Text("Save"),
           onPressed: () {
-            FirebaseFirestore.instance.collection("Trips").doc(widget.tripID).collection("Events").doc(eventID).set(
-                {"Event Type": "Flight", "Flight Number": _flightNumber.text, "Departure Time": departureDate, "Arrival Time": arrivalDate, "Title" : _title.text},
-                SetOptions(merge: true));
+            FirebaseFirestore.instance.collection("Trips").doc(widget.tripID).collection("Events").doc(eventID).set({
+              "Event Type": "Flight",
+              "Flight Number": _flightNumber.text,
+              "Departure Time": departureDate,
+              "Arrival Time": arrivalDate,
+              "Title": _title.text
+            }, SetOptions(merge: true));
             Navigator.pop(context);
           },
         )
@@ -240,10 +244,16 @@ class DiningQuestions extends StatefulWidget {
 class _DiningQuestionsState extends State<DiningQuestions> {
   DateTime date = DateTime.now();
   late TextEditingController location;
+  late TextEditingController _title;
+  var uuid = Uuid();
+  late final String eventID;
+
   @override
   void initState() {
+    eventID = uuid.v1();
     super.initState();
     location = TextEditingController();
+    _title = TextEditingController();
   }
 
   @override
@@ -252,8 +262,28 @@ class _DiningQuestionsState extends State<DiningQuestions> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text("Add Dining", style: TextStyle(fontSize: 30, color: Colors.black)),
+        TextQuestion(
+          question: "Title: ",
+          controller: _title,
+        ),
+        TextQuestion(
+          question: "Title:",
+          controller: _title,
+        ),
         DateTimeSelector(dateTime: date, title: "Date: "),
         TextQuestion(question: "Location", controller: location),
+        TextButton(
+          child: Text("Save"),
+          onPressed: () {
+            FirebaseFirestore.instance
+                .collection("Trips")
+                .doc(widget.tripID)
+                .collection("Events")
+                .doc(eventID)
+                .set({"Event Type": "Dining", "Date": date, "Title": _title.text}, SetOptions(merge: true));
+            Navigator.pop(context);
+          },
+        )
       ],
     );
   }
@@ -270,10 +300,17 @@ class EventQuestions extends StatefulWidget {
 class _EventQuestionsState extends State<EventQuestions> {
   DateTime date = DateTime.now();
   late TextEditingController location;
+  late TextEditingController _title;
+
+  var uuid = Uuid();
+  late final String eventID;
+
   @override
   void initState() {
+    eventID = uuid.v1();
     super.initState();
     location = TextEditingController();
+    _title = TextEditingController();
   }
 
   @override
@@ -282,8 +319,24 @@ class _EventQuestionsState extends State<EventQuestions> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text("Add An Activity", style: TextStyle(fontSize: 30, color: Colors.black)),
+        TextQuestion(
+          question: "Title: ",
+          controller: _title,
+        ),
         DateTimeSelector(dateTime: date, title: "Date: "),
         TextQuestion(question: "Location", controller: location),
+        TextButton(
+          child: Text("Save"),
+          onPressed: () {
+            FirebaseFirestore.instance
+                .collection("Trips")
+                .doc(widget.tripID)
+                .collection("Events")
+                .doc(eventID)
+                .set({"Event Type": "Dining", "Date": date, "Title": _title.text}, SetOptions(merge: true));
+            Navigator.pop(context);
+          },
+        )
       ],
     );
   }
@@ -300,8 +353,14 @@ class GeneralReminder extends StatefulWidget {
 class _GeneralReminderState extends State<GeneralReminder> {
   DateTime date = DateTime.now();
   late TextEditingController location;
+  late TextEditingController _title;
+
+  var uuid = Uuid();
+  late final String eventID;
+
   @override
   void initState() {
+    eventID = uuid.v1();
     super.initState();
     location = TextEditingController();
   }
@@ -312,8 +371,21 @@ class _GeneralReminderState extends State<GeneralReminder> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text("Add A General Reminder", style: TextStyle(fontSize: 30, color: Colors.black)),
+        TextQuestion(question: "Title: ", controller: _title,),
         DateTimeSelector(dateTime: date, title: "Date: "),
         TextQuestion(question: "Location", controller: location),
+        TextButton(
+          child: Text("Save"),
+          onPressed: () {
+            FirebaseFirestore.instance
+                .collection("Trips")
+                .doc(widget.tripID)
+                .collection("Events")
+                .doc(eventID)
+                .set({"Event Type": "Dining", "Date": date, "Title": _title.text}, SetOptions(merge: true));
+            Navigator.pop(context);
+          },
+        )
       ],
     );
   }

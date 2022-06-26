@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_arc_speed_dial/flutter_speed_dial_menu_button.dart';
 import 'package:flutter_arc_speed_dial/main_menu_floating_action_button.dart';
 import 'package:hackathon/screens/add_trip.dart';
+import 'package:hackathon/screens/recomdations.dart';
 
 import 'account_page.dart';
 import 'add_event.dart';
@@ -48,7 +49,9 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
 
   List<Widget> children = [
     HomePage(),
+    Reccomendations(),
     AccountPage(),
+
   ];
   int _selectedIndex = 0;
 
@@ -57,7 +60,7 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
     return Scaffold(
         body: children[_selectedIndex],
         bottomNavigationBar: AnimatedBottomNavigationBar(
-          icons: [Icons.home, Icons.settings],
+          icons: [Icons.home, Icons.list ,Icons.settings],
           backgroundColor: Color(0xff0c5fb3),
           activeColor: Colors.white,
           splashColor: Colors.lightBlue,
