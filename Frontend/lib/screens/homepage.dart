@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Map<String, dynamic> trips = {};
   String? _currentTrip;
-  List<String> images = ["assets/images/london.webp", "assets/images/beach.jpg", "assets/images/sunset.jpg"];
+  List<String> images = ["assets/images/beach.jpg", "assets/images/london.webp", "assets/images/sunset.jpg"];
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
@@ -106,11 +106,16 @@ class _HomePageState extends State<HomePage> {
                   List<Event> events = [];
                   query.docs.forEach((element) {
                     Map<String, dynamic> data = element.data() as Map<String, dynamic>;
-                    if (data["Event Type"] == "Flight") {
-                      data.remove("Event Type");
+                    // if (data["Event Type"] == "Flight") {
+                    //   data.remove("Event Type");
+                    //   events.add(Event(title: data["Title"], data: data));
+                    // } else if (data["Event Type"] == "Dining") {
+                    //   data.remove("Event Type");
+                    //   events.add(Event(title: data['Title'], data: data));
+                    // }
 
-                      events.add(Event(title: data["Title"], data: data));
-                    }
+                    data.remove("Event Type");
+                    events.add(Event(title: data['Title'], data: data));
                   });
                   // events.sort((a, b) {
                   //   a.data
@@ -119,7 +124,13 @@ class _HomePageState extends State<HomePage> {
                     shrinkWrap: true,
                     itemCount: events.length,
                     itemBuilder: (context, index) {
-                      return Activity(color: Colors.white, title: events[index].title, moreActivity: MoreDetail(), data: events[index].data, imagePath: images[index%images.length],);
+                      return Activity(
+                        color: Colors.white,
+                        title: events[index].title,
+                        moreActivity: MoreDetail(),
+                        data: events[index].data,
+                        imagePath: images[index % images.length],
+                      );
                     },
                   );
                 },

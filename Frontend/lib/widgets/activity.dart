@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Activity extends StatefulWidget {
   final Color color;
@@ -14,12 +15,15 @@ class Activity extends StatefulWidget {
 }
 
 class _ActivityState extends State<Activity> {
+
+  DateFormat dateFormat = DateFormat("MM/dd/yyyy HH:mm:ss");
+  
   @override
   Widget build(BuildContext context) {
     widget.data!.remove("Title");
     widget.data!.forEach((key, value) {
       if (value is Timestamp) {
-        widget.data![key] = DateTime.fromMillisecondsSinceEpoch(value.millisecondsSinceEpoch * 1000);
+        widget.data![key] = dateFormat.format(value.toDate());
       }
     });
     List<String> keys = widget.data!.keys.toList();
@@ -73,7 +77,7 @@ class _ActivityState extends State<Activity> {
                   width: (MediaQuery.of(context).size.width - 30) / 2,
                   child: Column(
                     children: [
-                      Text(widget.title, style: TextStyle(fontSize: 28, color: Colors.black)),
+                      Text(widget.title, style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold)),
                       ListView.builder(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),

@@ -12,13 +12,19 @@ class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const SizedBox(height: 50),
-        TextButton(
-          child: Text("Sign Out"),
-          onPressed: () {
-            FirebaseAuth.instance.signOut();
-          },
+        const SizedBox(height: 80),
+        Center(
+          child: TextButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.blue)
+            ),
+            child: Text("Sign Out", style: TextStyle(color: Colors.white)),
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+            },
+          ),
         )
       ],
     );
