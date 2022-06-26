@@ -95,7 +95,7 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
             ),
             FloatingActionButton(
               mini: true,
-              child: Icon(Icons.add),
+              child: Icon(Icons.event_note),
               onPressed: () {
                 showModalBottomSheet(context: context, isScrollControlled: true, shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))), builder: (BuildContext context) => AddEvent());
